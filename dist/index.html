@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>angular-flippy</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+		
+		<link rel="stylesheet" type="text/css" href="./css/flippy.min.css">
+    </head>
+    <body ng-app="angular-flippy">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <flippy data-click-toggle="true" data-mouseover-toggle="true">
+            <flippy-front>
+                <img src="http://placehold.it/300&text=Im the front" alt="the front" />
+            </flippy-front>
+            <flippy-back>
+                <img src="http://placehold.it/300&text=Aaaaaand the back" alt="the back" />
+            </flippy-back>
+        </flippy>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="./js/flippy.min.js"></script>
+
+    </body>
+</html>

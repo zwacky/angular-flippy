@@ -1,0 +1,24 @@
+{
+  "name": "angular-flippy",
+  "version": "0.1.0",
+  "description": "AngularJS directive implementation with a CSS3 flip animation.",
+  "main": "",
+  "scripts": {
+    "test": "karma start --single-run --no-auto-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zwacky/angular-flippy.git"
+  },
+  "author": "Simon Wicki <sim.wicki@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "~3.6.1",
+    "rimraf": "~2.2.6",
+    "multipipe": "0.0.2",
+    "gulp-concat": "~2.2.0",
+    "gulp-minify-css": "~0.3.1",
+    "gulp-uglify": "~0.2.1",
+    "gulp-less": "~1.2.3"
+  }
+}
