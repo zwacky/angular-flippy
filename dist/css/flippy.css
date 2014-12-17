@@ -1,32 +1,15 @@
 flippy {
   float: left;
-  margin: 0 10px 10px 0;
-  position: relative;
-  font-size: .8em;
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
   -ms-perspective: 600px;
   perspective: 600px;
-  cursor: pointer;
-  width: 250px;
-  height: 250px;
 }
-flippy img {
-  height: 100%;
-  width: 100%;
-}
-flippy flippy-front {
-  float: none;
+flippy-front {
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 900;
   width: inherit;
   height: inherit;
-  border: 1px solid #ccc;
-  background: white;
-  text-align: center;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
   -webkit-transform: rotateX(0deg) rotateY(0deg);
   -moz-transform: rotateX(0deg) rotateY(0deg);
   -ms-transform: rotateX(0deg) rotateY(0deg);
@@ -39,22 +22,12 @@ flippy flippy-front {
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
 }
-flippy flippy-back {
-  float: none;
+flippy-back {
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 800;
   width: inherit;
   height: inherit;
-  border: 1px solid #ccc;
-  background: white;
-  text-align: center;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
@@ -67,15 +40,9 @@ flippy flippy-back {
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
 }
 flippy.flipped flippy-front {
   z-index: 900;
-  border-color: #eee;
-  /*background: #333;*/
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
@@ -83,10 +50,8 @@ flippy.flipped flippy-front {
 }
 flippy.flipped flippy-back {
   z-index: 1000;
-  /*background: #80868d;*/
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }

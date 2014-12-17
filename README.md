@@ -3,7 +3,7 @@ angular-flippy
 
 AngularJS directive implementation with a CSS3 flip animation.
 
-The implementation is more CSS3 heavy than javascript-y, that's why you will find a lot of configuration options inside the .less file (or css directly).
+With v1.0 you'll find more customization within the directive itself. You are free to hook into any events like `ng-click` to fire the flip event.
 
 Demo
 ----
@@ -13,19 +13,17 @@ Flippy Directive Parameters
 ---------------------------
 ```html
 <flippy
-  data-click-toggle="true"
-  data-mouseover-toggle="true"
+  class="fancy"
+  ng-click="flip()"
+  ng-mouseenter="flip()"
+  ng-mouseleave="flip()"
+  flip-duration="800"
+  timing-function="ease-in-out"
 >
 ```
-* `data-click-toggle`: flips card upon click
-* `data-mouseover-toggle`: flips card upon mouseover
-
-Flippy CSS Configurations
--------------------------
-Inside `less/flippy.less` you can make your own changes. 
-
-**Note**: Flippy comes by default with a border and box-shadow. The shadow makes it look like the flipped card (back) is more above the ground than the unflipped card (front), which creates a nice illusion.
-
-* `@card-width`: width of card
-* `@card-height`: height of card, usually same as `@card-width`
-* `flip-duration`: time for the flip effect to last
+* `class`: fancy is an optional class to show some 3D-ness. (include `./css/flippy-fancy.min.css` for this exemplary style)
+* `ng-click`: toggles the flipping upon click
+* `ng-mouseenter`: toggles the flipping upon mouse enter
+* `ng-mouseleave`: toggles the flipping upon mouse leave
+* `flip-duration`: the time it takes to flip in ms
+* `timing-function`: timing functions (see https://developer.mozilla.org/de/docs/Web/CSS/transition-timing-function)

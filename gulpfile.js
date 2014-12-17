@@ -31,14 +31,26 @@ gulp.task('clean', function() {
  * compiles less files into css.
  */
 gulp.task('less', function() {
-	gulp.src(paths.less)
+	gulp.src('./less/flippy.less')
 		.pipe(concat('flippy.min.css'))
 		.pipe(less())
 		.pipe(minify())
 		.pipe(gulp.dest(paths.dist.css));
 
-	gulp.src(paths.less)
+	gulp.src('./less/flippy.less')
 		.pipe(concat('flippy.css'))
+		.pipe(less())
+		.pipe(gulp.dest(paths.dist.css));
+
+	// fancy
+	gulp.src('./less/flippy-fancy.less')
+		.pipe(concat('flippy-fancy.min.css'))
+		.pipe(less())
+		.pipe(minify())
+		.pipe(gulp.dest(paths.dist.css));
+
+	gulp.src('./less/flippy-fancy.less')
+		.pipe(concat('flippy-fancy.css'))
 		.pipe(less())
 		.pipe(gulp.dest(paths.dist.css));
 });
