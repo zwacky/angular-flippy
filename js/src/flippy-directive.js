@@ -6,7 +6,7 @@ angular.module('angular-flippy', [])
 		return {
 			restrict: 'EA',
 			link: function($scope, $elem, $attrs) {
-
+				$scope.flipped = false;
 				var options = {
 					flipDuration: ($attrs.flipDuration) ? $attrs.flipDuration : 400,
 					timingFunction: 'ease-in-out',
@@ -27,6 +27,7 @@ angular.module('angular-flippy', [])
 				 */
 				$scope.flip = function() {
 					$elem.toggleClass('flipped');
+					$scope.flipped = !$scope.flipped;
 				}
 
 			}
