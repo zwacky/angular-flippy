@@ -5,7 +5,9 @@
 	"homepage": "https://github.com/bartaz/impress.js",
 	"license" : ["http://bartaz.mit-license.org/", "http://www.gnu.org/licenses/"],
 	"main": [
-		"./js/flippy.js"
+		"./dist/js/flippy.js",
+	    "./dist/css/flippy.css",
+	    "./dist/css/flippy-fancy.css"
 	],
 	"ignore": [],
 	"keywords": [
