@@ -1,29 +1,49 @@
-angular-flippy
-==============
+# angular-flippy
 
 AngularJS directive implementation with a CSS3 flip animation.
 
 With v1.0 you'll find more customization within the directive itself. You are free to hook into any events like `ng-click` to fire the flip event.
 
-Demo
-----
+## Demo
+
 Try the demo here: http://codepen.io/zwacky/pen/bnpCh/
 
-Flippy Directive Parameters
----------------------------
+## Flippy Directive Parameters
+
 ```html
 <flippy
   class="fancy"
-  ng-click="flip()"
-  ng-mouseenter="flip()"
-  ng-mouseleave="flip()"
-  flip-duration="800"
-  timing-function="ease-in-out"
->
+  flip="['click', 'mouseenter']"
+  flip-back="['click', 'mouseleave']"
+  duration="800"
+  timing-function="ease-in-out">
+</flippy>
 ```
 * `class`: fancy is an optional class to show some 3D-ness. (include `./css/flippy-fancy.min.css` for this exemplary style)
-* `ng-click`: toggles the flipping upon click
-* `ng-mouseenter`: toggles the flipping upon mouse enter
-* `ng-mouseleave`: toggles the flipping upon mouse leave
-* `flip-duration`: the time it takes to flip in ms
+* `flip`: events that trigger the first flip. will only trigger if flip state is in opposite flip state.
+* `flip-back`: events that trigger the flip back. will only trigger if flip state is in opposite flip state.
+* `duration`: the time it takes to flip in ms
 * `timing-function`: timing functions (see https://developer.mozilla.org/de/docs/Web/CSS/transition-timing-function)
+
+## Events
+
+There are two types of events accepted for the `flip` (first flip) and `flip-back` (flip back):
+* Every [DOM event](https://en.wikipedia.org/wiki/DOM_events) e.g. click, mouseenter, mouseleave, dblclick, ...
+* `custom:XXX` where XXX is the name of the broadcast event
+
+
+### Custom Events Example
+```html
+// somewhere in your webapp
+function buttonClicked() {
+    $rootScope.$broadcast('FLIP_EVENT_IN');
+}
+
+// your directive
+<flippy
+    flip="['custom:FLIP_EVENT_IN']"
+    flip-back="['custom:FLIP_EVENT_OUT']"
+    duration="800"
+    timing-function="ease-in-out">
+</flippy>
+```

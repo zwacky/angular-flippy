@@ -2,32 +2,72 @@
  * handles the behaviour of flipping card.
  */
 angular.module('angular-flippy', [])
-	.directive('flippy', function() {
+	.directive('flippy', () => {
 		return {
-			restrict: 'EA',
-			link: function($scope, $elem, $attrs) {
-				$scope.flipped = false;
-				var options = {
-					flipDuration: ($attrs.flipDuration) ? $attrs.flipDuration : 400,
-					timingFunction: 'ease-in-out',
+			restrict: 'E',
+			scope: {
+				flip: '=',
+				flipBack: '=',
+				duration: '@',
+				timingFunction: '@'
+			},
+			link: ($scope, $elem, $attrs) => {
+
+				const CUSTOM_PREFIX = 'custom:';
+				const state = {
+					flipped: false
+				};
+				const options = {
+					duration: 400,
+					timingFunction: 'ease-in-out'
 				};
 
-				// setting flip options
-				angular.forEach(['flippy-front', 'flippy-back'], function(name) {
-					var el = $elem.find(name);
+				// assign new options
+				angular.forEach(['duration', 'timingFunction'], (item) => {
+					options[item] = ($scope.item) ? $scope.item : options[item];
+				});
+
+				angular.forEach({flip: flip, flipBack: flipBack}, (flipFunc, evt) => {
+					angular.forEach($scope[evt], (eventName) => {
+						if (eventName.indexOf(CUSTOM_PREFIX) === -1) {
+							// directly register event listener to avoid having to start off angular's digest cycle
+							$elem.addEventListener(eventName)
+						} else {
+							$scope.$on(eventName.substr(eventName.indexOf(CUSTOM_PREFIX)), flipFunc);
+						}
+					});
+				});
+
+				// set flip duration
+				angular.forEach(['flippy-front', 'flippy-back'], (name) => {
+					const el = $elem.find(name);
 					if (el.length == 1) {
-						angular.forEach(['', '-ms-', '-webkit-'], function(prefix) {
+						angular.forEach(['', '-ms-', '-webkit-'], (prefix) => {
 							angular.element(el[0]).css(prefix + 'transition', 'all ' + options.flipDuration/1000 + 's ' + options.timingFunction);
 						});
 					}
 				});
 
+
 				/**
-				 * behaviour for flipping effect.
+				 * flips the card.
+				 * will be ignored, if the state is already the same as the target state.
+				 *
+				 * @param boolean isBack
 				 */
-				$scope.flip = function() {
-					$elem.toggleClass('flipped');
-					$scope.flipped = !$scope.flipped;
+				function _flip(isBack = false) {
+					if ((!isBack && !state.flipped) || (isBack && state.flipped)) {
+						$elem.toggleClass('flipped');
+						state.flipped = !state.flipped;
+					}
+				}
+
+				function flip() {
+					_flip();
+				}
+
+				function flipBack() {
+					_flip(true);
 				}
 
 			}

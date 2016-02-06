@@ -1,8 +1,5 @@
 flippy {
   float: left;
-  -webkit-perspective: 600px;
-  -moz-perspective: 600px;
-  -ms-perspective: 600px;
   perspective: 600px;
 
   &-front {
@@ -11,24 +8,11 @@ flippy {
     width: inherit;
     height: inherit;
 
-    -webkit-transform: rotate3d( 0, 0, 0, 0deg );
-    -moz-transform: rotate3d( 0, 0, 0, 0deg );
-    -ms-transform: rotate3d( 0, 0, 0, 0deg );
     transform: rotate3d( 0, 0, 0, 0deg );
-
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
-
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
     backface-visibility: hidden;
 
     // will be set in the directive
-    // -webkit-transition: all @flip-duration ease-in-out;
-    // -ms-transition: all @flip-duration ease-in-out;
     // transition: all @flip-duration ease-in-out;
   }
 
@@ -38,24 +22,11 @@ flippy {
     width: inherit;
     height: inherit;
 
-    -webkit-transform: rotate3d( 0, 1, 0, -180deg );
-    -moz-transform: rotate3d( 0, 1, 0, -180deg );
-    -ms-transform: rotate3d( 0, 1, 0, -180deg );
     transform: rotate3d( 0, 1, 0, -180deg );
-
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
-
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
     backface-visibility: hidden;
 
     // will be set in the directive
-    // -webkit-transition: all @flip-duration ease-in-out;
-    // -ms-transition: all @flip-duration ease-in-out;
     // transition: all @flip-duration ease-in-out;
   }
 
@@ -63,17 +34,11 @@ flippy {
 
     flippy-front {
       z-index: 900;
-      -webkit-transform: rotate3d( 0, 1, 0, 180deg );
-      -moz-transform: rotate3d( 0, 1, 0, 180deg );
-      -ms-transform: rotate3d( 0, 1, 0, 180deg );
       transform: rotate3d( 0, 1, 0, 180deg );
     }
 
     flippy-back {
       z-index: 1000;
-      -webkit-transform: rotate3d( 0, 0, 0, 0deg );
-      -moz-transform: rotate3d( 0, 0, 0, 0deg );
-      -ms-transform: rotate3d( 0, 0, 0, 0deg );
       transform: rotate3d( 0, 0, 0, 0deg );
     }
   }

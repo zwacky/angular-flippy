@@ -1,11 +1,9 @@
 {
   "name": "angular-flippy",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "description": "AngularJS directive implementation with a CSS3 flip animation.",
-  "main": "",
-  "scripts": {
-    "test": "karma start --single-run --no-auto-watch"
-  },
+  "main": "dist/angular-flippy.min.js",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/zwacky/angular-flippy.git"
@@ -13,12 +11,23 @@
   "author": "Simon Wicki <sim.wicki@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "~3.6.1",
-    "rimraf": "~2.2.6",
-    "multipipe": "0.0.2",
-    "gulp-concat": "~2.2.0",
-    "gulp-minify-css": "~0.3.1",
-    "gulp-uglify": "~0.2.1",
-    "gulp-less": "~1.2.3"
+    "browser-sync": "^2.11.1",
+    "connect-history-api-fallback": "^1.1.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-conventional-changelog": "^0.7.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-purifycss": "^0.2.0",
+    "gulp-uglify": "^1.5.1",
+    "jshint-stylish": "^2.1.0",
+    "merge-stream": "^1.0.0"
   }
 }
