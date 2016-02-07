@@ -13,14 +13,9 @@
             <p>
                 Please refer to the <a href="https://github.com/zwacky/angular-flippy">README.md</a> for instructions on how to use angular-flippy.
             </p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <br><br><br><br><br><br>
             <div class="col-sm-4" ng-repeat="item in [1, 2, 3]">
-                <h2>Item #{{$index}}</h2>
+                <h2>Item #{{$index+1}}</h2>
                 <flippy
                     class="fancy"
                     flip="['click']"
@@ -38,8 +33,6 @@
 
                 </flippy>
             </div>
-
-
         </div>
 
         <script type="text/javascript" src="../node_modules/angular/angular.js"></script>

@@ -6,7 +6,8 @@ With v1.0 you'll find more customization within the directive itself. You are fr
 
 ## Demo
 
-Try the demo here: http://codepen.io/zwacky/pen/bnpCh/
+- Try the demo here: http://output.jsbin.com/kenunu
+- Clone the repo and `gulp watch` to start the demo page locally
 
 ## Flippy Directive Parameters
 
@@ -47,3 +48,7 @@ function buttonClicked() {
     timing-function="ease-in-out">
 </flippy>
 ```
+
+## Contribute
+
+Just use `gulp watch` and hack away!
