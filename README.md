@@ -6,8 +6,13 @@ With v1.0 you'll find more customization within the directive itself. You are fr
 
 ## Demo
 
-- Try the demo here: http://output.jsbin.com/kenunu
-- Clone the repo and `gulp watch` to start the demo page locally
+* Try the demo here: http://output.jsbin.com/kenunu
+* Clone the repo and `gulp watch` to start the demo page locally
+
+## Install
+
+* npm: `npm install angular-flippy`
+* bower: `bower install angular-flippy`
 
 ## Flippy Directive Parameters
 
