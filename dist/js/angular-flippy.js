@@ -44,7 +44,6 @@ angular.module('angular-flippy', []).directive('flippy', function () {
 				var el = $elem.find(name);
 				if (el.length == 1) {
 					angular.forEach(['', '-ms-', '-webkit-'], function (prefix) {
-						console.log('seetttinggg', prefix + 'transition', 'all ' + options.duration / 1000 + 's ' + options.timingFunction);
 						angular.element(el[0]).css(prefix + 'transition', 'all ' + options.duration / 1000 + 's ' + options.timingFunction);
 					});
 				}
