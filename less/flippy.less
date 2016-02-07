@@ -2,29 +2,30 @@ flippy {
   float: left;
   perspective: 600px;
 
-  &-front {
-    position: absolute;
-    z-index: 900;
+  flippy-front, flippy-back {
+	position: absolute;
+
     width: inherit;
     height: inherit;
 
-    transform: rotate3d( 0, 0, 0, 0deg );
     transform-style: preserve-3d;
     backface-visibility: hidden;
+  }
+
+  flippy-front {
+    z-index: 900;
+
+
+    transform: rotate3d( 0, 0, 0, 0deg );
 
     // will be set in the directive
     // transition: all @flip-duration ease-in-out;
   }
 
-  &-back {
-    position: absolute;
+  flippy-back {
     z-index: 800;
-    width: inherit;
-    height: inherit;
 
     transform: rotate3d( 0, 1, 0, -180deg );
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
 
     // will be set in the directive
     // transition: all @flip-duration ease-in-out;

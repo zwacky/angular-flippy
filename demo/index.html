@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angular-flippy-demo">
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../dist/css/angular-flippy.css">
+        <link rel="stylesheet" href="../dist/css/angular-flippy-fancy.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>angular-flippy Demo Page</h1>
+            <p>
+                Please refer to the <a href="https://github.com/zwacky/angular-flippy">README.md</a> for instructions on how to use angular-flippy.
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-sm-4" ng-repeat="item in [1, 2, 3]">
+                <h2>Item #{{$index}}</h2>
+                <flippy
+                    class="fancy"
+                    flip="['click']"
+                    flip-back="['click']"
+                    duration="800"
+                    timing-function="ease-in-out">
+
+                    <flippy-front>
+                        <img src="http://placehold.it/300x300&text=Im the front" alt="the front" />
+                    </flippy-front>
+
+                    <flippy-back>
+                        <img src="http://placehold.it/300x300&text=Aaaaaand the back" alt="the back" />
+                    </flippy-back>
+
+                </flippy>
+            </div>
+
+
+        </div>
+
+        <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+        <script type="text/javascript" src="./demo-app.js"></script>
+        <script type="text/javascript" src="../dist/js/angular-flippy.js"></script>
+    </body>
+</html>

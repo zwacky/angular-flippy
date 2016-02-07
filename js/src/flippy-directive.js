@@ -31,7 +31,7 @@ angular.module('angular-flippy', [])
 					angular.forEach($scope[evt], (eventName) => {
 						if (eventName.indexOf(CUSTOM_PREFIX) === -1) {
 							// directly register event listener to avoid having to start off angular's digest cycle
-							$elem.addEventListener(eventName)
+							angular.element($elem)[0].addEventListener(eventName, flipFunc);
 						} else {
 							$scope.$on(eventName.substr(eventName.indexOf(CUSTOM_PREFIX)), flipFunc);
 						}
@@ -43,7 +43,8 @@ angular.module('angular-flippy', [])
 					const el = $elem.find(name);
 					if (el.length == 1) {
 						angular.forEach(['', '-ms-', '-webkit-'], (prefix) => {
-							angular.element(el[0]).css(prefix + 'transition', 'all ' + options.flipDuration/1000 + 's ' + options.timingFunction);
+							console.log('seetttinggg', prefix + 'transition', 'all ' + options.duration/1000 + 's ' + options.timingFunction);
+							angular.element(el[0]).css(prefix + 'transition', 'all ' + options.duration/1000 + 's ' + options.timingFunction);
 						});
 					}
 				});
@@ -56,9 +57,12 @@ angular.module('angular-flippy', [])
 				 * @param boolean isBack
 				 */
 				function _flip(isBack = false) {
-					if ((!isBack && !state.flipped) || (isBack && state.flipped)) {
-						$elem.toggleClass('flipped');
-						state.flipped = !state.flipped;
+					if ((!isBack && !state.flipped) || (isBack && state.flipped)) {
+						// to avoid toggling it right back if flip-back is the same event
+						setTimeout(() => {
+							$elem.toggleClass('flipped');
+							state.flipped = !state.flipped;
+						}, 0);
 					}
 				}
 
