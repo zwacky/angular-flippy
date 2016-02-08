@@ -13,6 +13,7 @@ With v1.0 you'll find more customization within the directive itself. You are fr
 
 * npm: `npm install angular-flippy`
 * bower: `bower install angular-flippy`
+* add *angular-flippy* to your `angular.module('your-webapp', ['angular-flippy', ...)` dependencies
 
 ## Flippy Directive Parameters
 
