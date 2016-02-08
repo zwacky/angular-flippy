@@ -5,9 +5,9 @@
 	"homepage": "https://github.com/zwacky/angular-flippy",
 	"license" : "MIT",
 	"main": [
-	    "./dist/js/flippy.js",
-	    "./dist/css/flippy.css",
-	    "./dist/css/flippy-fancy.css"
+	    "./dist/js/angular-flippy.js",
+	    "./dist/css/angular-flippy.css",
+	    "./dist/css/angular-flippy-fancy.css"
 	],
 	"ignore": [],
 	"keywords": [
