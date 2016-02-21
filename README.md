@@ -2,7 +2,7 @@
 
 AngularJS directive implementation with a CSS3 flip animation.
 
-With v1.0 you'll find more customization within the directive itself. You are free to hook into any events like `ng-click` to fire the flip event.
+With v2.0 you'll find more customization within the directive itself. You are free to hook into any events like `ng-click` to fire the flip event.
 
 ## Demo
 
