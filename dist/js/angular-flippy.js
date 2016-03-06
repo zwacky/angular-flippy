@@ -34,7 +34,7 @@ angular.module('angular-flippy', []).directive('flippy', function () {
 						// directly register event listener to avoid having to start off angular's digest cycle
 						angular.element($elem)[0].addEventListener(eventName, flipFunc);
 					} else {
-						$scope.$on(eventName.substr(eventName.indexOf(CUSTOM_PREFIX)), flipFunc);
+						$scope.$on(eventName.substr(CUSTOM_PREFIX.length), flipFunc);
 					}
 				});
 			});
