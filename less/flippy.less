@@ -1,6 +1,7 @@
 flippy {
   float: left;
   perspective: 600px;
+  -ms-perspective: none;
 
   flippy-front, flippy-back {
 	position: absolute;
@@ -17,6 +18,7 @@ flippy {
 
 
     transform: rotate3d( 0, 0, 0, 0deg );
+    -ms-transform: rotateY(0deg);
 
     // will be set in the directive
     // transition: all @flip-duration ease-in-out;
@@ -26,6 +28,7 @@ flippy {
     z-index: 800;
 
     transform: rotate3d( 0, 1, 0, -180deg );
+    -ms-transform: rotateY(180deg);
 
     // will be set in the directive
     // transition: all @flip-duration ease-in-out;
@@ -36,11 +39,13 @@ flippy {
     flippy-front {
       z-index: 900;
       transform: rotate3d( 0, 1, 0, 180deg );
+      -ms-transform: rotateY(180deg);
     }
 
     flippy-back {
       z-index: 1000;
       transform: rotate3d( 0, 0, 0, 0deg );
+      -ms-transform: rotateY(0deg);
     }
   }
 }

@@ -2,6 +2,7 @@ flippy {
   float: left;
   -webkit-perspective: 600px;
           perspective: 600px;
+  -ms-perspective: none;
 }
 flippy flippy-front,
 flippy flippy-back {
@@ -17,19 +18,23 @@ flippy flippy-front {
   z-index: 900;
   -webkit-transform: rotate3d(0, 0, 0, 0deg);
           transform: rotate3d(0, 0, 0, 0deg);
+  -ms-transform: rotateY(0deg);
 }
 flippy flippy-back {
   z-index: 800;
   -webkit-transform: rotate3d(0, 1, 0, -180deg);
           transform: rotate3d(0, 1, 0, -180deg);
+  -ms-transform: rotateY(180deg);
 }
 flippy.flipped flippy-front {
   z-index: 900;
   -webkit-transform: rotate3d(0, 1, 0, 180deg);
           transform: rotate3d(0, 1, 0, 180deg);
+  -ms-transform: rotateY(180deg);
 }
 flippy.flipped flippy-back {
   z-index: 1000;
   -webkit-transform: rotate3d(0, 0, 0, 0deg);
           transform: rotate3d(0, 0, 0, 0deg);
+  -ms-transform: rotateY(0deg);
 }
