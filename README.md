@@ -6,7 +6,7 @@ With v2.0 you'll find more customization within the directive itself. You are fr
 
 ## Demo
 
-* Try the demo here: http://output.jsbin.com/kenunu
+* Try the demo here: http://output.jsbin.com/panizijuka
 * Clone the repo and `gulp watch` to start the demo page locally
 
 ## Install
