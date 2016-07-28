@@ -1,6 +1,6 @@
 {
   "name": "angular-flippy",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "AngularJS directive implementation with a CSS3 flip animation.",
   "main": "dist/js/angular-flippy.min.js",
   "scripts": {},
