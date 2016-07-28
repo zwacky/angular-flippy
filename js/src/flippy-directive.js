@@ -24,7 +24,7 @@ angular.module('angular-flippy', [])
 
 				// assign new options
 				angular.forEach(['duration', 'timingFunction'], (item) => {
-					options[item] = ($scope.item) ? $scope.item : options[item];
+					options[item] = ($scope[item]) ? $scope[item] : options[item];
 				});
 
 				angular.forEach({flip: flip, flipBack: flipBack}, (flipFunc, evt) => {
