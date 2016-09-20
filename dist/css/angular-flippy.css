@@ -38,3 +38,26 @@ flippy.flipped flippy-back {
           transform: rotate3d(0, 0, 0, 0deg);
   -ms-transform: rotateY(0deg);
 }
+flippy[vertical] flippy-front {
+  z-index: 900;
+  -webkit-transform: rotate3d(0, 0, 0, 0deg);
+  transform: rotate3d(0, 0, 0, 0deg);
+  -ms-transform: rotateY(0deg);
+}
+flippy[vertical] flippy-back {
+  z-index: 800;
+  -webkit-transform: rotate3d(1, 0, 0, -180deg) !important;
+  transform: rotate3d(1, 0, 0, -180deg) !important;
+  -ms-transform: rotateY(180deg);
+}
+flippy[vertical].flipped flippy-front {
+  z-index: 900;
+  -webkit-transform: rotate3d(1, 0, 0, 180deg) !important;
+  transform: rotate3d(1, 0, 0, 180deg) !important;
+  -ms-transform: rotateY(180deg);
+}
+flippy[vertical].flipped flippy-back {
+  z-index: 1000;
+  -webkit-transform: rotate3d(0, 0, 0, 0deg) !important;
+  transform: rotate3d(0, 0, 0, 0deg) !important;
+}

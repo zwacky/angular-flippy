@@ -2,50 +2,65 @@ flippy {
   float: left;
   perspective: 600px;
   -ms-perspective: none;
-
   flippy-front, flippy-back {
-	position: absolute;
-
+    position: absolute;
     width: inherit;
     height: inherit;
-
     transform-style: preserve-3d;
     backface-visibility: hidden;
   }
-
   flippy-front {
     z-index: 900;
-
-
-    transform: rotate3d( 0, 0, 0, 0deg );
+    transform: rotate3d( 0, 0, 0, 0deg);
     -ms-transform: rotateY(0deg);
-
     // will be set in the directive
     // transition: all @flip-duration ease-in-out;
   }
-
   flippy-back {
     z-index: 800;
-
-    transform: rotate3d( 0, 1, 0, -180deg );
+    transform: rotate3d( 0, 1, 0, -180deg);
     -ms-transform: rotateY(180deg);
-
     // will be set in the directive
     // transition: all @flip-duration ease-in-out;
   }
-
   &.flipped {
-
     flippy-front {
       z-index: 900;
-      transform: rotate3d( 0, 1, 0, 180deg );
+      transform: rotate3d( 0, 1, 0, 180deg);
       -ms-transform: rotateY(180deg);
     }
-
     flippy-back {
       z-index: 1000;
-      transform: rotate3d( 0, 0, 0, 0deg );
+      transform: rotate3d( 0, 0, 0, 0deg);
       -ms-transform: rotateY(0deg);
+    }
+  }
+}
+
+flippy[vertical] {
+  flippy-front {
+    z-index: 900;
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+    -ms-transform: rotateY(0deg);
+  }
+  flippy-back {
+    z-index: 800;
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)!important;
+    transform: rotate3d(1, 0, 0, -180deg)!important;
+    -ms-transform: rotateY(180deg);
+  }
+  &.flipped {
+    flippy-front {
+      z-index: 900;
+      -webkit-transform: rotate3d(1, 0, 0, 180deg)!important;
+      transform: rotate3d(1, 0, 0, 180deg)!important;
+      -ms-transform: rotateY(180deg);
+    }
+    flippy-back {
+      z-index: 1000;
+      -webkit-transform: rotate3d(0, 0, 0, 0deg)!important;
+      transform: rotate3d(0, 0, 0, 0deg)!important;
     }
   }
 }
