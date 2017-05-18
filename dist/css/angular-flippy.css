@@ -3,6 +3,7 @@ flippy {
   -webkit-perspective: 600px;
           perspective: 600px;
   -ms-perspective: none;
+  -moz-perspective: none;
 }
 flippy flippy-front,
 flippy flippy-back {
